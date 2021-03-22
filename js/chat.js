@@ -4,10 +4,16 @@ $(function(){
             $.ajax({
                 url:"process.php",
                 type:"POST",
-                dataType:"json",
-                data:{id:'HELLO'}
+                dataType:"text",
+                data:{
+                    name:$('#name').val(),
+                    message:$('#message').val()
+                },
+                success: function(data){
+                    alert('success'),
+                    console.log(data)
+                }
             });
-            //console.log($('#name').val());
         }else{
             alert('失敗');
         }
