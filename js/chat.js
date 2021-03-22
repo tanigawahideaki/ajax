@@ -11,11 +11,20 @@ $(function(){
                 },
                 success: function(data){
                     alert('success'),
-                    console.log(data)
+                    console.log(data),
+                    $('#chat').html(data),
+                    clearText()
                 }
             });
         }else{
             alert('失敗');
         }
-    });  
+    });
+
+    function clearText(){
+        var textform = document.getElementById('name');
+        var textform2 = document.getElementById('message');
+        textform2.value = "";
+        textform.value = "";
+    }
 });
